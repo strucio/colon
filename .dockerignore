@@ -20,3 +20,4 @@ venv/
 *.swo
 *~
 test_checker.py
+setup.sh
