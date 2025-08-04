@@ -26,7 +26,7 @@ def check_button_status(html_content):
         return None, "Error fetching page"
     
     try:
-        soup = BeautifulSoup(html_content, 'html.parser')
+        soup = BeautifulSoup(html_content, 'lxml')  # Explicitly specify lxml parser
         
         # Look for buttons or links that might contain our target text
         # We'll search in multiple places since we don't know the exact structure
