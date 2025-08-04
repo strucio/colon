@@ -14,7 +14,7 @@ A Python-based monitoring tool that automatically checks for ticket availability
 ```bash
 # Clone or download the repository
 git clone https://github.com/Strucio/colon
-cd ticket-checker
+cd colon
 
 # Run the setup script
 chmod +x setup.sh
@@ -33,8 +33,8 @@ chmod +x setup.sh
 2. **Build and run with Docker**:
 
    ```bash
-   docker build -t ticket-checker .
-   docker run -d --name ticket-checker --env-file .env ticket-checker
+   docker build -t colon .
+   docker run -d --name colon --env-file .env colon
    ```
 
 ## ⚙️ Configuration
@@ -70,25 +70,25 @@ BUTTON_TEXT_TO_WATCH = "Text to monitor for changes"
 
 ```bash
 # Build the image
-docker build -t ticket-checker .
+docker build -t colon .
 
 # Run the container
-docker run -d --name ticket-checker --env-file .env ticket-checker
+docker run -d --name colon --env-file .env colon
 
 # View logs
-docker logs ticket-checker
+docker logs colon
 
 # Follow logs in real-time
-docker logs -f ticket-checker
+docker logs -f colon
 
 # Stop the container
-docker stop ticket-checker
+docker stop colon
 
 # Start the container
-docker start ticket-checker
+docker start colon
 
 # Remove the container
-docker rm ticket-checker
+docker rm colon
 ```
 
 ## 🧪 Testing
@@ -158,7 +158,7 @@ python ticket_checker.py
 **Docker container stops immediately**:
 
 - Check if `.env` file exists and contains valid Discord webhook URL
-- View logs: `docker logs ticket-checker`
+- View logs: `docker logs colon`
 
 **No notifications received**:
 
