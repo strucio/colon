@@ -13,7 +13,7 @@ A Python-based monitoring tool that automatically checks for ticket availability
 
 ```bash
 # Clone or download the repository
-git clone <your-repo-url>
+git clone https://github.com/Strucio/colon
 cd ticket-checker
 
 # Run the setup script
