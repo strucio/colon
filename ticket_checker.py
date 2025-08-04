@@ -1,7 +1,6 @@
 import logging
 import schedule
 import time
-from datetime import datetime
 from modules.web_scraper import check_tickets
 from modules.notifier import send_status_update
 from config import TARGET_URL, CHECK_INTERVAL_HOURS, LOG_LEVEL
