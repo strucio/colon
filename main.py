@@ -13,17 +13,17 @@ def setup_logging():
         level=getattr(logging, LOG_LEVEL),
         format='%(asctime)s - %(levelname)s - %(message)s',
         handlers=[
-            logging.FileHandler('logs/ticket_checker.log'),
+            logging.FileHandler('logs/main.log'),
             logging.StreamHandler()  # This prints to console too
         ]
     )
 
 def run_check():
     """
-    Run a single ticket check
+    Run a single check
     """
     try:
-        logging.info("Starting ticket check...")
+        logging.info("Starting check...")
         status, message = check_tickets()
         
         if status == "no_change":
@@ -41,14 +41,14 @@ def run_check():
 
 def main():
     """
-    Main function to start the ticket checker
+    Main function to start colon
     """
-    print("🎫 Ticket Checker Starting...")
+    print("🎫 Colón Starting...")
     setup_logging()
     
     # Send startup notification
     send_status_update("started", TARGET_URL)
-    logging.info("Ticket checker started successfully")
+    logging.info("Colón started successfully")
     
     # Schedule the check to run every hour
     schedule.every(CHECK_INTERVAL_HOURS).hours.do(run_check)
@@ -67,8 +67,8 @@ def main():
             schedule.run_pending()
             time.sleep(60)  # Check every minute if it's time to run
     except KeyboardInterrupt:
-        logging.info("Ticket checker stopped by user")
-        print("\n👋 Ticket checker stopped!")
+        logging.info("Colón stopped by user")
+        print("\n👋 Colón stopped!")
 
 if __name__ == "__main__":
     main()

@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 """
-Simple test script to verify the ticket checker works
+Simple test script to verify colon works
 """
 from modules.web_scraper import check_tickets
 from modules.notifier import send_status_update

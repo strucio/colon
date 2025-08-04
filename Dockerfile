@@ -12,5 +12,5 @@ COPY . .
 # Create logs directory
 RUN mkdir -p logs
 
-# Run the ticket checker
-CMD ["python", "ticket_checker.py"]
+# Run the script
+CMD ["python", "main.py"]

@@ -96,7 +96,7 @@ docker rm colon
 Run the test script to verify everything works:
 
 ```bash
-python test_checker.py
+python test.py
 ```
 
 Or test individual components:
@@ -133,15 +133,15 @@ The application provides several ways to monitor its status:
 pip install -r requirements.txt
 
 # Run locally (for testing)
-python ticket_checker.py
+python main.py
 ```
 
 ### Project Structure
 
 ```sh
 ├── config.py              # Configuration settings
-├── ticket_checker.py      # Main application
-├── test_checker.py        # Test script
+├── main.py                # Main application
+├── test.py        # Test script
 ├── requirements.txt       # Python dependencies
 ├── Dockerfile             # Docker configuration
 ├── setup.sh               # Setup script
@@ -163,7 +163,7 @@ python ticket_checker.py
 **No notifications received**:
 
 - Verify Discord webhook URL is correct
-- Test with: `python test_checker.py`
+- Test with: `python test.py`
 
 **Website parsing errors**:
 

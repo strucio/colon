@@ -56,7 +56,7 @@ def check_tickets():
     """
     Main function to check if tickets are available
     """
-    logging.info(f"Checking tickets at {TARGET_URL}")
+    logging.info(f"Checking {TARGET_URL}")
     
     html_content = fetch_webpage(TARGET_URL)
     if not html_content:

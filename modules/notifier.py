@@ -2,7 +2,7 @@ import requests
 import logging
 from config import DISCORD_WEBHOOK_URL
 
-def send_discord_notification(message, title="Ticket Checker Alert"):
+def send_discord_notification(message, title="Colón Alert"):
     """
     Send a notification to Discord via webhook
     """
@@ -33,7 +33,7 @@ def send_discord_notification(message, title="Ticket Checker Alert"):
 
 def send_status_update(status, url, button_text=None):
     """
-    Send a status update about the ticket checking
+    Send a status update about the check
     """
     if status == "tickets_available":
         message = f"🎉 **TICKETS ARE NOW AVAILABLE!** 🎉\n\nCheck the website: {url}"
@@ -45,10 +45,10 @@ def send_status_update(status, url, button_text=None):
         message = f"❌ Error checking website: {url}\n\nPlease check the logs."
         title = "⚠️ Error"
     elif status == "started":
-        message = f"✅ Ticket checker started!\n\nMonitoring: {url}\nChecking every hour for changes."
-        title = "🤖 Checker Started"
+        message = f"✅ Colón started!\n\nMonitoring: {url}\nChecking every hour for changes."
+        title = "🤖 Colón Started"
     else:
         message = f"Status: {status}\nURL: {url}"
-        title = "Ticket Checker Update"
+        title = "Colón Update"
     
     return send_discord_notification(message, title)

@@ -19,5 +19,5 @@ venv/
 *.swp
 *.swo
 *~
-test_checker.py
+test.py
 setup.sh
