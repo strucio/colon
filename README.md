@@ -141,7 +141,7 @@ python main.py
 ```sh
 ├── config.py              # Configuration settings
 ├── main.py                # Main application
-├── test.py        # Test script
+├── test.py                # Test script
 ├── requirements.txt       # Python dependencies
 ├── Dockerfile             # Docker configuration
 ├── setup.sh               # Setup script

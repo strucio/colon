@@ -3,7 +3,7 @@ import schedule
 import time
 from modules.web_scraper import check_tickets
 from modules.notifier import send_status_update
-from config import TARGET_URL, CHECK_INTERVAL_HOURS, LOG_LEVEL
+from config import TARGET_URL, TEST_MODE, LOG_LEVEL
 
 def setup_logging():
     """
@@ -50,14 +50,20 @@ def main():
     send_status_update("started", TARGET_URL)
     logging.info("Colón started successfully")
     
-    # Schedule the check to run every hour
-    schedule.every(CHECK_INTERVAL_HOURS).hours.do(run_check)
+    # Schedule the check to run at the top of every hour
+    if TEST_MODE:
+        # In test mode, run every minute at the top of the minute
+        schedule.every().minute.at(":00").do(run_check)
+        print(f"🕐 Scheduled to check every minute at :00 seconds (TEST MODE)")
+    else:
+        # Run every hour at the top of the hour
+        schedule.every().hour.at(":00").do(run_check)
+        print(f"🕐 Scheduled to check every hour at :00 minutes")
     
     # Run an initial check immediately
     run_check()
     
     print(f"✅ Monitoring {TARGET_URL}")
-    print(f"🕐 Checking every {CHECK_INTERVAL_HOURS} hour(s)")
     print("📱 Notifications will be sent to Discord")
     print("🛑 Press Ctrl+C to stop")
     
