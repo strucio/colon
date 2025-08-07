@@ -1,9 +1,12 @@
-.env
 __pycache__
 *.pyc
 *.pyo
 *.pyd
 .Python
+.git
+.gitignore
+README.md
+.env
 logs/*
 .pytest_cache
 .coverage
@@ -16,4 +19,5 @@ venv/
 *.swp
 *.swo
 *~
+test.py
 *.log
