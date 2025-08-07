@@ -4,14 +4,8 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Website settings
-TARGET_URL = "https://teatrocolon.org.ar/produccion/estonian-philharmonic-chamber-choir/"
-BUTTON_TEXT_TO_WATCH = "Próximamente"
-
-# Check if we're in test mode
-TEST_MODE = os.getenv("TEST_MODE", "false").lower() == "true"
+TARGET_URL = os.getenv("TARGET_URL")
+BUTTON_TEXT_TO_WATCH = os.getenv("BUTTON_TEXT_TO_WATCH")
 
 # Discord settings
 DISCORD_WEBHOOK_URL = os.getenv("DISCORD_WEBHOOK_URL")
-
-# Logging
-LOG_LEVEL = "INFO"

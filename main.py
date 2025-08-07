@@ -1,14 +1,14 @@
 import logging
 from modules.web_scraper import check_tickets
 from modules.notifier import send_status_update
-from config import TARGET_URL, LOG_LEVEL
+from config import TARGET_URL
 
 def setup_logging():
     """
     Configure logging to console
     """
     logging.basicConfig(
-        level=getattr(logging, LOG_LEVEL),
+        level=logging.INFO,
         format='%(asctime)s - %(levelname)s - %(message)s'
     )
 
