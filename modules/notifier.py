@@ -44,9 +44,9 @@ def send_status_update(status, url, button_text=None):
     elif status == "error":
         message = f"❌ Error checking website: {url}\n\nPlease check the logs."
         title = "⚠️ Error"
-    elif status == "started":
-        message = f"✅ Colón started!\n\nMonitoring: {url}\nChecking every hour for changes."
-        title = "🤖 Colón Started"
+    elif status == "test":
+        message = f"🧪 Test notification from Colón\n\nTarget URL: {url}\n\nIf you see this, notifications are working! ✅"
+        title = "🧪 Test Notification"
     else:
         message = f"Status: {status}\nURL: {url}"
         title = "Colón Update"

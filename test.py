@@ -17,7 +17,7 @@ def test_scraper():
 def test_discord():
     """Test Discord notification"""
     print("🧪 Testing Discord notification...")
-    return send_status_update("started", TARGET_URL)
+    return send_status_update("test", TARGET_URL)
 
 if __name__ == "__main__":
     print("🧪 Running tests...\n")
