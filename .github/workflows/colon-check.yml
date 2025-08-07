@@ -26,6 +26,14 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
     
+    # Add this step to see the runner's IP
+    - name: Check runner IP
+      run: |
+        echo "Runner IP:"
+        curl -s https://ipinfo.io/ip
+        echo ""
+        curl -s https://ipinfo.io/json
+    
     - name: Run ticket check
       env:
         TARGET_URL: ${{ secrets.TARGET_URL }}
