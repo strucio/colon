@@ -1,0 +1,18 @@
+name: Pull and Run Docker Image on Schedule
+
+on:
+  schedule:
+    - cron: '0 * * * *'
+
+jobs:
+  run-docker:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Pull Docker image
+        run: |
+          docker pull docker pull strucio/colon:latest
+
+      - name: Run Docker container
+        run: |
+          docker run -e BUTTON_TEXT_TO_WATCH=${{ vars.BUTTON_TEXT_TO_WATCH }} -e DISCORD_WEBHOOK_URL=${{ secrets.DISCORD_WEBHOOK_URL }} -e TARGET_URL=${{ vars.TARGET_URL }} strucio/colon:latest
