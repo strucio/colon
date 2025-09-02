@@ -12,7 +12,7 @@ jobs:
     steps:
       - name: Pull Docker image
         run: |
-          docker pull docker pull strucio/colon:latest
+          docker pull strucio/colon:latest
 
       - name: Run Docker container
         run: |
